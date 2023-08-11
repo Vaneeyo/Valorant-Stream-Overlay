@@ -1,0 +1,71 @@
+*:focus {
+    outline: none;
+}
+
+body {
+    background-color: #121212;
+    margin: 0;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Montserrat';
+}
+
+input {
+    width: 75px;
+    height: 40px;
+    background-color: #1d1d1d;
+    color: #b9b9b9;
+    border: none;
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+    padding: 0 5px 0 5px;
+}
+
+input:focus {
+    background-color: #121212;
+    border: 2px solid #565656;
+    color: whitesmoke;
+}
+
+button {
+    cursor: pointer;
+    color: whitesmoke;
+    border: none;
+    height: 40px;
+    background-color: #d22a36;
+    border-radius: 3px;
+    box-shadow: none;
+    transition: all .2s ease-in-out;
+}
+
+button:hover {
+    background-color: whitesmoke;
+    color: #d22a36;
+    font-weight: 900;
+}
+
+#error {
+    color: red;
+    visibility: hidden;
+    position: absolute;
+}
+
+select {
+    height: 40px;
+    border-radius: 3px;
+    background-color: #1d1d1d;
+    color: whitesmoke;
+    border: none;
+    transition: all .2s ease-in-out;
+}
+
+select:focus {
+    background-color: #121212;
+    border: 2px solid #565656;
+}
+
