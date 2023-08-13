@@ -1,4 +1,7 @@
 # Valorant Stream Overlay
+<p align="center">
+  <img width="256" height="256" src="readme/Logo.png">
+</p>
 An app that can be used for showing your current rank status on stream
 
 # Usage
