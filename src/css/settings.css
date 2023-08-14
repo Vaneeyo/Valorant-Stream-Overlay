@@ -1,0 +1,49 @@
+body {
+    background-color: #121212;
+    margin: 0;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    color: white;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+#back {
+    position:absolute;
+    top: 5px;
+    left: 5px;
+    opacity: 0.75;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+#back:hover {
+    opacity: 1;
+}
+
+#developer {
+    background-color: #202020;
+    height: 60px;
+    width: 70%;
+    border-radius: 33px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+#profile_picture {
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#names {
+    margin-left: 10px;
+}

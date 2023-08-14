@@ -1,3 +1,14 @@
+window.transitionToPage = function(href) {
+    document.querySelector('body').style.opacity = 0
+    setTimeout(function() { 
+        window.location.href = href
+    }, 500)
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+    document.querySelector('body').style.opacity = 1
+})
+
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
@@ -31,6 +42,7 @@ async function go() {
         fs.writeFileSync(regionFile, region)
         fs.writeFileSync(nameFile, name)
         fs.writeFileSync(tagFile, tag)
-        window.location.href = `./overlay.html?region=${region}&name=${name}&tag=${tag}`
+
+        transitionToPage(`./overlay.html?region=${region}&name=${name}&tag=${tag}`)
     }
 }

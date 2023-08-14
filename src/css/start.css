@@ -13,6 +13,8 @@ body {
     flex-direction: column;
     gap: 10px;
     font-family: 'Montserrat';
+    opacity: 0;
+    transition: opacity .25s;
 }
 
 input {
@@ -67,5 +69,18 @@ select {
 select:focus {
     background-color: #121212;
     border: 2px solid #565656;
+}
+
+#settings {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    opacity: 0.75;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+#settings:hover {
+    opacity: 1;
 }
 
