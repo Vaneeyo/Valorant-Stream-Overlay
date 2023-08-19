@@ -1,8 +1,22 @@
+*::-webkit-scrollbar {
+    width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #6e6e6e;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #505050;
+    border-radius: 10px;
+    border: 3px solid #505050;
+}
+
 body {
     background-color: #121212;
     margin: 0;
     top: 0;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +26,7 @@ body {
     gap: 10px;
     opacity: 0;
     transition: opacity .25s;
+    padding: 10px;
 }
 
 #back {
@@ -27,17 +42,6 @@ body {
     opacity: 1;
 }
 
-#developer {
-    background-color: #202020;
-    height: 60px;
-    width: 70%;
-    border-radius: 33px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 10px 0 10px;
-}
-
 #profile_picture {
     height: 40px;
     border-radius: 50%;
@@ -46,4 +50,34 @@ body {
 
 #names {
     margin-left: 10px;
+}
+
+.bubble {
+    background-color: #202020;
+    height: 50%;
+    border-radius: 33px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    height: 20px;
+    border-radius: 50%; /* Make it round */
+    border: 2px solid #ccc; /* Add a border to mimic a checkbox */
+    cursor: pointer; /* Show pointer cursor on hover */
+    appearance: none;
+    aspect-ratio: 1/1;
+    transition: all .2s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #ff4655;
+    border: 2px solid #cccccc52; /* Add a border to mimic a checkbox */
+}
+
+.title {
+    margin-top: 20px;
 }

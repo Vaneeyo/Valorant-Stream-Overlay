@@ -11,13 +11,26 @@
 <body>
     <img id="back" src="res/ic_oui_back.svg" onclick="transitionToPage('start.html')">
 
-    <strong>Head Developer</strong>
-    <div id="developer">
+    <strong class="title">Head Developer</strong>
+    
+    <div class="bubble">
         <img src="https://avatars.githubusercontent.com/u/103961848" id="profile_picture" onclick="openProject()">
         <div id="names">
             <strong id="fullname">キャッツウィズライス</strong>
             <span id="nickname">Vaneeyo</span>
         </div>
+    </div>
+
+    <strong class="title">Options</strong>
+    <div class="bubble">
+        <div>
+            
+        </div>
+        <img src="./res/obs.png" id="profile_picture">
+        <div id="names">
+            <span id="nickname">Autostart VSO if OBS is running</span>
+        </div>
+        <input type="checkbox" id="autostart_streamingsoftware"/>
     </div>
 </body>
 </html>
