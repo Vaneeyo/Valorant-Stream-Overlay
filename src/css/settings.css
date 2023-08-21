@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono&display=swap');
+
 *::-webkit-scrollbar {
     width: 9px;
 }
@@ -20,17 +22,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Montserrat';
+    font-family: 'Inter', sans-serif;
     color: white;
     flex-direction: column;
     gap: 10px;
     opacity: 0;
     transition: opacity .25s;
     padding: 10px;
+    font-weight: 400;
 }
 
 #back {
-    position:absolute;
+    position: absolute;
     top: 5px;
     left: 5px;
     opacity: 0.75;
@@ -42,13 +45,15 @@ body {
     opacity: 1;
 }
 
-#profile_picture {
-    height: 40px;
+.settings_icon {
+    height: 35px;
     border-radius: 50%;
     cursor: pointer;
+    aspect-ratio: 1/1;
+    object-fit: scale-down;
 }
 
-#names {
+.names {
     margin-left: 10px;
 }
 
@@ -60,14 +65,19 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 10px 10px 10px 10px;
+    gap: 5px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 input[type="checkbox"] {
     display: inline-block;
     height: 20px;
-    border-radius: 50%; /* Make it round */
-    border: 2px solid #ccc; /* Add a border to mimic a checkbox */
-    cursor: pointer; /* Show pointer cursor on hover */
+    border-radius: 50%;
+    /* Make it round */
+    border: 2px solid #ccc;
+    /* Add a border to mimic a checkbox */
+    cursor: pointer;
+    /* Show pointer cursor on hover */
     appearance: none;
     aspect-ratio: 1/1;
     transition: all .2s ease-in-out;
@@ -75,9 +85,20 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked {
     background-color: #ff4655;
-    border: 2px solid #cccccc52; /* Add a border to mimic a checkbox */
+    border: 2px solid #cccccc52;
+    /* Add a border to mimic a checkbox */
 }
 
 .title {
     margin-top: 20px;
+    font-weight: 500;
+}
+
+.link_icon {
+    height: 35px;
+    cursor: pointer;
+}
+
+#links {
+    gap: 10px;
 }

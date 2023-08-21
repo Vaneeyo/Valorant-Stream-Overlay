@@ -1,18 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *:focus {
     outline: none;
 }
 
+* {
+    font-family: 'Inter', sans-serif;
+}
+
 body {
+    display: flex;
     background-color: #121212;
     margin: 0;
     top: 0;
     height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    font-family: 'Montserrat';
     opacity: 0;
     transition: opacity .25s;
 }
@@ -48,7 +53,6 @@ button {
 button:hover {
     background-color: whitesmoke;
     color: #d22a36;
-    font-weight: 900;
 }
 
 #error {
@@ -83,4 +87,3 @@ select:focus {
 #settings:hover {
     opacity: 1;
 }
-

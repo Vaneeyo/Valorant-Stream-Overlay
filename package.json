@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "discord-rpc": "^4.0.1",
     "electron": "^25.5.0"
   }
 }

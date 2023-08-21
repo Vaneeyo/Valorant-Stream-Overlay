@@ -2,18 +2,20 @@ const { app, BrowserWindow } = require('electron')
 const os = require('os');
 const fs = require('fs');
 const path = require('path');
+const DiscordRPC = require('discord-rpc');
+const { type } = require('process');
 
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 350,
-    height: 150,
+    height: 200,
     autoHideMenuBar: true,
     resizable: false,
-    webPreferences: { 
+    webPreferences: {
       contextIsolation: false,
       nodeIntegration: true
-     },
-})
+    },
+  })
 
   win.loadFile('./src/start.html')
 }
@@ -39,3 +41,37 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+
+const startTimestamp = new Date();
+
+const rpc = new DiscordRPC.Client({ transport: 'ipc' });
+
+const clientId = '1142956480660774922';
+
+async function setActivity() {
+  if (fs.readFileSync(folderPath + "\\options\\discord_rpc", "utf-8") == "false")
+    return;
+
+  rpc.setActivity({
+    details: `v0.0.4`,
+    startTimestamp,
+    largeImageKey: 'logo',
+    largeImageText: 'Valorant Stream Overlay',
+    instance: false,
+    buttons: [
+      { label: "Repository", url: "https://github.com/Vaneeyo/Valorant-Stream-Overlay"}
+    ]
+  });
+}
+
+rpc.on('ready', () => {
+  setActivity();
+
+  setInterval(() => {
+    setActivity();
+  }, 15e3);
+});
+
+rpc.login({ clientId }).catch(console.error);
+
+
