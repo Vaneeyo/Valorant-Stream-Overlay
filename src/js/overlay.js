@@ -15,10 +15,17 @@ const urlParams = new URLSearchParams(queryString);
 const region = urlParams.get("region");
 const name = urlParams.get("name");
 const tag = urlParams.get("tag");
+const apikey = urlParams.get("key");
+
 
 async function OverlayUpdate() {
     const url = `https://api.henrikdev.xyz/valorant/v1/mmr/${region}/${name}/${tag}`
-    const response = await fetch(url);
+    const response = await fetch(url, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": apikey
+        }
+    });
     const data = await response.json();
 
     // changing #username to name + "#" + tag

@@ -26,23 +26,52 @@ document.addEventListener("DOMContentLoaded", function () {
     if (fs.existsSync(tagFile)) document.getElementById("tag").value = fs.readFileSync(tagFile, 'utf-8');
 });
 
+function showError(text)
+{
+    document.getElementById("error").style.visibility = "visible";
+    document.getElementById("error").style.position = "relative";
+    document.getElementById("error").innerHTML = text;
+
+}
 
 async function go() {
+    const apikey = fs.readFileSync(path.join(folderPath, "options", "api_key"), "utf-8");
+    if (apikey === "")
+    {
+        showError("API Key missing.")
+        return;
+    }
+
     const name = document.getElementById("name").value;
+    if (name === "") {
+        showError("Name missing.")
+        return;
+    }
+
     const tag = document.getElementById("tag").value;
+
+    if (tag === "") {
+        showError("Tag missing.")
+        return;
+    }
+
     const region = document.getElementById("region").value;
-    const url = `https://api.henrikdev.xyz/valorant/v1/mmr/${region}/${name}/${tag}`
-    const response = await fetch(url);
+    const url = `https://api.henrikdev.xyz/valorant/v2/mmr/${region}/${name}/${tag}`
+    const response = await fetch(url, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": apikey
+        }
+    });
     const data = await response.json();
 
-    if (data.status != 200 || name == "" || tag == "") {
-        document.getElementById("error").style.visibility = "visible";
-        document.getElementById("error").style.position = "relative";
+    if (data.status != 200) {
+        showError("Something went wrong.")
     } else {
         fs.writeFileSync(regionFile, region)
         fs.writeFileSync(nameFile, name)
         fs.writeFileSync(tagFile, tag)
 
-        transitionToPage(`./overlay.html?region=${region}&name=${name}&tag=${tag}`)
+        transitionToPage(`./overlay.html?region=${region}&name=${name}&tag=${tag}&key=${apikey}`)
     }
 }

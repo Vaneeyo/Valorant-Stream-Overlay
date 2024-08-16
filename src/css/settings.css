@@ -60,6 +60,7 @@ body {
 .bubble {
     background-color: #202020;
     height: 50%;
+    width: 80%;
     border-radius: 33px;
     display: flex;
     justify-content: flex-start;
@@ -69,18 +70,37 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
+#api_bubble {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
 input[type="checkbox"] {
     display: inline-block;
     height: 20px;
     border-radius: 50%;
-    /* Make it round */
     border: 2px solid #ccc;
-    /* Add a border to mimic a checkbox */
     cursor: pointer;
-    /* Show pointer cursor on hover */
     appearance: none;
     aspect-ratio: 1/1;
     transition: all .2s ease-in-out;
+}
+
+input[type="text"] {
+    height: 20px;
+    width: 90%;
+    transition: all .2s ease-in-out;
+    background-color: #1d1d1d;
+    color: #b9b9b9;
+    border: none;
+    border-radius: 3px;
+    padding: 0 5px 0 5px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border: none;
 }
 
 input[type="checkbox"]:checked {
@@ -101,4 +121,5 @@ input[type="checkbox"]:checked {
 
 #links {
     gap: 10px;
+    width: auto;
 }
