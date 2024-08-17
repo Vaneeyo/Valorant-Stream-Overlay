@@ -2,25 +2,29 @@
 <p align="center">
   <img width="256" height="256" src="readme/Logo.png">
 </p>
-An app that can be used for showing your current rank status on stream
 
-# Usage
-- Put your name in the name input
-- Put your tag in the tag input
-- Pick your region (AP = Asia Pacific | BR = Brazil | EU = Europe | KR = Korea | LATAM = Latin America | NA = North America)
+The Valorant Stream Overlay (VSO) is a handy tool for streamers who want to display their current rank status live on stream. With this overlay, you can keep your audience updated with your latest in-game progress in Valorant without any hassle.
 
-# Errors
-- When no rank image appears and it says null/100: You picked the wrong region
-- If it gives you the error message "something went wrong": 
-  - Open your console with (crtl + shift + i)
-  - Error 429: Too many tries
-  - Error 404: Name or tag is wrong
+# Features
+- Real-time Rank Display
+- User-Friendly Interface
 
- psoi on discord if any other problems appear
+# Getting an API Key
+1. Join the HenrikDev Discord:
+  - Join the [Discord](https://discord.gg/b5FmTqG)
+
+2. Verify Yourself:
+  - Follow the verification steps provided by the Discord server.
+
+3. Get Your API Key
+  - Go into #get-a-key channel in the API category
+  - Click on the "Generate" button.
+  - Select Valorant and then choose Basic Key.
+  - Copy the generated key and paste it into the settings of VSO.
 
  # Images
-![start](readme/start.png)
-![overlay](readme/overlay.png)
+![Start Page](readme/start.png)
+![Overlay Page](readme/overlay.png)
 
 # Thanks
 [HenrikDev](https://github.com/Henrik-3/unofficial-valorant-api) for his API
