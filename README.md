@@ -23,8 +23,8 @@ The Valorant Stream Overlay (VSO) is a handy tool for streamers who want to disp
   - Copy the generated key and paste it into the settings of VSO.
 
  # Images
-![Start Page](readme/start.png)
-![Overlay Page](readme/overlay.png)
+![Preview](readme/Preview.gif)
+
 
 # Thanks
 [HenrikDev](https://github.com/Henrik-3/unofficial-valorant-api) for his API
