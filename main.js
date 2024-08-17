@@ -13,11 +13,12 @@ const createWindow = () => {
     resizable: false,
     webPreferences: {
       contextIsolation: false,
-      nodeIntegration: true
+      nodeIntegration: true,
+      webSecurity: false
     },
   })
 
-  win.loadFile('./src/start.html')
+  win.loadFile(path.join(__dirname, `/src/start.html`))
 }
 
 app.whenReady().then(() => {
